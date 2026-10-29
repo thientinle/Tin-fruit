@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tín Fruit - Vua Trái Cây</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Itim&display=swap">
+    <link rel="stylesheet" href="Tinfruit.css">
+    <style>
+    
+        .filter .pill.active { background: #13ab0b; color: #000; }
+        .filter .pill { cursor: pointer; }
+        #empty-msg { display: none; padding: 20px; text-align: center; font-size: 1.2em; }
+
+       
+        #hop-hoi { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                   background: rgba(0,0,0,0.6); z-index: 999; }
+        #noi-dung-hoi { background: #222; color: white; width: 320px; margin: 40px auto;
+                        padding: 20px; border: 3px dashed white; border-radius: 16px; text-align: center; }
+        #hinh-hoi { height: 250px; width: auto; max-width: 100%; border-radius: 10px; }
+        #noi-dung-hoi button { font-family: inherit; font-size: 1em; padding: 8px 18px; margin: 6px;
+                               border-radius: 20px; border: 2px solid white; cursor: pointer; }
+        #nut-co { background: #90e08c; }
+        #nut-khong { background: white; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <header>
+        <div class="box main-nav">
+            <strong>Tín Fruit</strong>
+            <img src="TinFruit.png" alt="Tín Fruit" class="logo-img" width="50" height="50">
+            <div class="actions">
+                <button type="button" class="icon-btn">🔍</button>
+                <button type="button" class="icon-btn">🛒 <span id="so-gio">0</span></button>
+                <button type="button" class="icon-btn"> <a class ="pill" href="https://www.youtube.com/@TottoLesgo">👤</a></button>
+                <button type="button" class="pill">Tư vấn</button>
+            </div>
+        </div>                
+    </header>
+
+    <main>
+        
+        <p class="breadcrumb">
+            <a href="#">Trang chủ</a> /
+            <a href="#">Danh mục</a> /
+            <span>Trái cây nhập khẩu</span>
+        </p>
+
+       
+        <section class="box banner">
+            <h1>Trái Cây Nhập Khẩu</h1>
+            <span class="pill" id="product-count">10 sản phẩm</span>
+            <span>Giao tận nơi, gói ghém tử tế</span>
+        </section>
+
+      
+        <section class="box filter">
+            <h2>Chọn theo ý bạn</h2>
+
+            <div class="filter-row">
+                <span>Bộ sưu tập:</span>
+                <button type="button" class="pill bst active" onclick="locBoSuuTap('all', this)">Tất cả</button>
+                <button type="button" class="pill bst" onclick="locBoSuuTap('banchay', this)">Bán chạy</button>
+                <button type="button" class="pill bst" onclick="locBoSuuTap('quatang', this)">Quà tặng</button>
+            </div>
+
+            <div class="filter-row">
+                <span>Ngân sách:</span>
+                <button type="button" class="pill ns active" onclick="locNganSach('all', this)">Tất cả</button>
+                <button type="button" class="pill ns" onclick="locNganSach('under150', this)">Dưới 150$</button>
+                <button type="button" class="pill ns" onclick="locNganSach('150-250', this)">150$ - 250$</button>
+                <button type="button" class="pill ns" onclick="locNganSach('over250', this)">Trên 250$</button>
+            </div>
+
+            <div class="filter-row">
+                <label for="sort-select">Sắp xếp:</label>
+                <select id="sort-select" class="pill" onchange="doiSapXep()">
+                    <option value="default">Mặc định</option>
+                    <option value="asc">Giá tăng dần</option>
+                    <option value="desc">Giá giảm dần</option>
+                </select>
+            </div>
+        </section>
+
+      
+        <section>
+            <div class="product-list">
+                <article class="card" data-price="100" data-collection="banchay">
+                    <div class="image">
+                        <img src="./234567890.jpg" alt="Nho đỏ không hạt" width="200" height="96">
+                    </div>
+                    <h3>Nho đỏ không hạt</h3>
+                    <p>100.00$ - <button type="button" class="add-btn" onclick="hoiXacNhan(this)">Thêm vào giỏ</button></p>
+                </article>
+
+                <article class="card" data-price="120" data-collection="banchay quatang">
+                    <div class="image">
+                        <img src="45678987654567890.png" alt="Táo Envy" width="200" height="96">
+                    </div>
+                    <h3>Táo Envy</h3>
+                    <p>120.00$ - <button type="button" class="add-btn" onclick="hoiXacNhan(this)">Thêm vào giỏ</button></p>
+                </article>
+
+                <article class="card" data-price="90" data-collection="banchay">
+                    <div class="image">
+                        <img src="./2270450000006.jpg.webp" alt="Cherry đỏ" width="200" height="96">
+                    </div>
+                    <h3>Cherry đỏ</h3>
+                    <p>90.00$ - <button type="button" class="add-btn" onclick="hoiXacNhan(this)">Thêm vào giỏ</button></p>
+                </article>
+
+                <article class="card" data-price="80" data-collection="quatang">
+                    <div class="image">
+                        <img src="./22222324.jpg" alt="Kiwi vàng" width="200" height="96">
+                    </div>
+                    <h3>Kiwi vàng</h3>
+                    <p>80.00$ - <button type="button" class="add-btn" onclick="hoiXacNhan(this)">Thêm vào giỏ</button></p>
+                </article>
+
+                <article class="card" data-price="10" data-collection="banchay">
+                    <div class="image">
+                        <img src="./2187190000008-1.jpg" alt="Cam Navel" width="200" height="96">
+                    </div>
+                    <h3>Cam Navel</h3>
+                    <p>10.00$ - <button type="button" class="add-btn" onclick="hoiXacNhan(this)">Thêm vào giỏ</button></p>
+                </article>
+
+                <article class="card" data-price="50" data-collection="quatang">
+                    <div class="image">
+                        <img src="./323232323232.jpg" alt="Lê Hàn Quốc" width="200" height="96">
+                    </div>
+                    <h3>Lê Hàn Quốc</h3>
+                    <p>50.00$ - <button type="button" class="add-btn" onclick="hoiXacNhan(this)">Thêm vào giỏ</button></p>
+                </article>
+
+                <article class="card" data-price="70" data-collection="quatang">
+                    <div class="image">
+                        <img src="./13231321.webp" alt="Nho xanh Shine Muscat" width="200" height="96">
+                    </div>
+                    <h3>Nho xanh Shine Muscat</h3>
+                    <p>70.00$ - <button type="button" class="add-btn" onclick="hoiXacNhan(this)">Thêm vào giỏ</button></p>
+                </article>
+
+                <article class="card" data-price="150" data-collection="banchay quatang">
+                    <div class="image">
+                        <img src="./341413.jpg" alt="Việt quất" width="200" height="96">
+                    </div>
+                    <h3>Việt quất</h3>
+                    <p>150.00$ - <button type="button" class="add-btn" onclick="hoiXacNhan(this)">Thêm vào giỏ</button></p>
+                </article>
+
+                <article class="card" data-price="100000" data-collection="quatang">
+                    <div class="image">
+                        <img src="./213131.jpg" width = "200" height="96" alt="Dâu tây">
+                    </div>
+                    <h3>Dâu tây</h3>
+                    <p>100.000.00$ - <button type="button" class="add-btn" onclick="hoiXacNhan(this)">Thêm vào giỏ</button></p>
+                </article>
+
+                <article class="card" data-price="10" data-collection="banchay">
+                    <div class="image">
+                        <img src="./12312312312.jpg" alt="Lựu đỏ" width="200" height="96">
+                    </div>
+                    <h3>Lựu đỏ</h3>
+                    <p>10.00$ - <button type="button" class="add-btn" onclick="hoiXacNhan(this)">Thêm vào giỏ</button></p>
+                </article>
+            </div>
+
+            <p id="empty-msg">Không có sản phẩm phù hợp 🍓</p>
+
+            <p class="note">
+                <em>Fruity Co &copy;</em>
+            </p>
+        </section>
+    </main>
+</div>
+
+
+<aside class="care">
+    <h3>Tín Fruit care</h3>
+    <ul>
+        <li><a href="#">💬 Chat Zalo</a></li>
+        <li><a href="#">📞 Gọi tư vấn</a></li>
+    </ul>
+</aside>
+
+
+<div id="hop-hoi">
+    <div id="noi-dung-hoi">
+        <img id="hinh-hoi" src="1321313131231554.png" alt="Sản phẩm">
+        <h3 id="ten-hoi"></h3>
+        <h2>Quý khách hàng đã sure chưa ?</h2>
+        <button type="button" id="nut-co" onclick="dongY()">Sure rồi!</button>
+        <button type="button" id="nut-khong" onclick="khongDongY()">Chưa, để xem lại</button>
+    </div>
+</div>
+
+<script>
+    
+    var khungSanPham = document.querySelector(".product-list");
+    var tatCaSanPham = Array.from(document.querySelectorAll(".card")); // 10 thẻ sản phẩm
+    var oSapXep = document.getElementById("sort-select");
+    var soLuong = document.getElementById("product-count");
+    var thongBao = document.getElementById("empty-msg");
+
+   
+    var boSuuTapDangChon = "all";
+    var nganSachDangChon = "all";
+
+  
+    function locBoSuuTap(giaTri, nutVuaBam) {
+        boSuuTapDangChon = giaTri;
+
+        
+        var cacNut = document.querySelectorAll(".bst");
+        for (var i = 0; i < cacNut.length; i++) {
+            cacNut[i].classList.remove("active");
+        }
+      
+        nutVuaBam.classList.add("active");
+
+        hienThi();
+    }
+
+    
+    function locNganSach(giaTri, nutVuaBam) {
+        nganSachDangChon = giaTri;
+
+        var cacNut = document.querySelectorAll(".ns");
+        for (var i = 0; i < cacNut.length; i++) {
+            cacNut[i].classList.remove("active");
+        }
+        nutVuaBam.classList.add("active");
+
+        hienThi();
+    }
+
+    
+    function doiSapXep() {
+        hienThi();
+    }
+
+    function dungNganSach(gia) {
+        if (nganSachDangChon == "under150") {
+            return gia < 150;
+        }
+        if (nganSachDangChon == "150-250") {
+            return gia >= 150 && gia <= 250;
+        }
+        if (nganSachDangChon == "over250") {
+            return gia > 250;
+        }
+        return true; 
+    }
+
+   
+    function hienThi() {
+       
+        var danhSach = tatCaSanPham.slice();
+
+        // sắp xếp theo giá
+        var kieu = oSapXep.value;
+        if (kieu == "asc") {
+            danhSach.sort(function (a, b) {
+                return a.getAttribute("data-price") - b.getAttribute("data-price");
+            });
+        }
+        if (kieu == "desc") {
+            danhSach.sort(function (a, b) {
+                return b.getAttribute("data-price") - a.getAttribute("data-price");
+            });
+        }
+
+        var dem = 0; 
+
+        for (var i = 0; i < danhSach.length; i++) {
+            var the = danhSach[i];
+            var gia = Number(the.getAttribute("data-price"));
+            var bst = the.getAttribute("data-collection");
+
+            
+            var dungBst = false;
+            if (boSuuTapDangChon == "all") {
+                dungBst = true;
+            } else if (bst.indexOf(boSuuTapDangChon) != -1) {
+                dungBst = true;
+            }
+
+            
+            if (dungBst && dungNganSach(gia)) {
+                the.style.display = "";
+                dem = dem + 1;
+            } else {
+                the.style.display = "none";
+            }
+
+            
+            khungSanPham.appendChild(the);
+        }
+
+        
+        soLuong.textContent = dem + " sản phẩm";
+
+      
+        if (dem == 0) {
+            thongBao.style.display = "block";
+        } else {
+            thongBao.style.display = "none";
+        }
+    }
+  
+    var hopHoi = document.getElementById("hop-hoi");
+    var hinhHoi = document.getElementById("hinh-hoi");
+    var tenHoi = document.getElementById("ten-hoi");
+    var soGio = document.getElementById("so-gio");
+    var soLuongGio = 0;
+    var tenDangChon = "";
+
+   
+    function hoiXacNhan(nutVuaBam) {
+       
+        var the = nutVuaBam.parentElement.parentElement;
+
+        var anh = the.querySelector("img").src;     
+        var ten = the.querySelector("h3").textContent; 
+
+        hinhHoi.src = "1321313131231554.jpg";   
+        tenHoi.textContent = ten;
+        tenDangChon = ten;
+
+        hopHoi.style.display = "block"; 
+    }
+
+    
+    function dongY() {
+        soLuongGio = soLuongGio + 1;
+        soGio.textContent = soLuongGio;
+        hopHoi.style.display = "none";
+        alert("Đã thêm " + tenDangChon + " vào giỏ hàng!");
+    }
+
+    
+    function khongDongY() {
+        hopHoi.style.display = "none";
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+/* ===== CHUNG ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #afd49e;
+    color: #f2f0ea;
+    font-family: "Itim", "Comic Sans MS", sans-serif;
+    font-size: 18px;
+}
+
+a {
+    color: #f2f0ea;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+/* ===== HỘP VIỀN NÉT ĐỨT ===== */
+.box {
+    border: 2px dashed #f2f0ea;
+    border-radius: 14px;
+    background-color: #1f211f;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+}
+
+/* ===== NÚT DẠNG VIÊN THUỐC ===== */
+.pill {
+    border: 2px solid #f2f0ea;
+    border-radius: 999px;
+    background-color: transparent;
+    color: #f2f0ea;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 4px 16px;
+    cursor: pointer;
+}
+
+.pill:hover {
+    background-color: #f2f0ea;
+    color: #161816;
+}
+
+.icon-btn {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ===== HEADER ===== */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.main-nav nav {
+    flex: 1;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ===== BREADCRUMB ===== */
+.breadcrumb {
+    color: #b9b7b0;
+    font-size: 15px;
+}
+
+/* ===== BANNER ===== */
+.banner {
+    background-color: #676b67;
+    padding: 24px 28px;
+}
+
+.banner h1 {
+    margin: 0 0 12px 0;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+/* ===== BỘ LỌC ===== */
+.filter h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.filter-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+/* ===== DANH SÁCH SẢN PHẨM ===== */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.card {
+    border: 2px solid #f2f0ea;
+    border-radius: 14px;
+    background-color: #1f211f;
+    padding: 12px;
+    text-align: center;
+}
+
+.image {
+    border: 2px dashed #b9b7b0;
+    border-radius: 10px;
+    background-color: #2a332b;
+    color: #b9b7b0;
+    height: 100px;
+    line-height: 100px;
+    margin-bottom: 8px;
+}
+
+.card h3 {
+    margin: 0 0 6px 0;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.card p {
+    margin: 0;
+    color: #b9b7b0;
+    font-size: 16px;
+}
+
+.add-btn {
+    border: none;
+    background: none;
+    color: #b9b7b0;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    color: #f2f0ea;
+    text-decoration: underline;
+}
+
+.note {
+    color: #b9b7b0;
+    font-size: 15px;
+    margin-bottom: 100px;
+}
+
+/* ===== WIDGET CỐ ĐỊNH GÓC PHẢI DƯỚI ===== */
+.care {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    border: 2px solid #f2f0ea;
+    border-radius: 14px;
+    background-color: #2a332b;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.care h3 {
+    margin: 0 0 4px 0;
+    font-size: 18px;
+}
+
+.care ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== RESPONSIVE (màn hình nhỏ) ===== */
+@media (max-width: 800px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+}
