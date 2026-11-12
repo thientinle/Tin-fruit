@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tín Fruit - Vua Trái Cây</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Itim&display=swap">
+    <link rel="stylesheet" href="Tinfruit.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <div class="box main-nav">
+                <strong>FRUIT WARE</strong>
+                <img src="fruitware34_alien.png" alt="FRUIT WARE" class="logo-img" width="50" height="50">
+                <div class="actions">
+                    <button type="button" class="icon-btn">🔍</button>
+                    <button type="button" class="icon-btn">🛒 <span style="color: white">0</span></button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+            <p class="breadcrumb action">
+                <a href="TrangChu.html">Trang chủ</a> /
+                <a href="#">Danh mục</a> /
+                <a href="gioithieu.html">Giới thiệu</a>
+            </p>
+
+            <section class="box banner">
+                <h1>Trái Cây Nhập Khẩu</h1>
+                <span class="pill">10 sản phẩm</span>
+                <span>Giao tận nơi, gói ghém tử tế</span>
+            </section>
+
+            <section class="box filter">
+                <h2>Chọn theo ý bạn</h2>
+                <div class="filter-row">
+                    <label for="sort-select">Sắp xếp:</label>
+                    <select id="sort-select" class="pill">
+                        <option>Mặc định</option>
+                        <option>Giá tăng dần</option>
+                        <option>Giá giảm dần</option>
+                    </select>
+                </div>
+            <div class="filter-row" style="margin: 10px 0;">
+                <span>Bộ sưu tập:</span>
+                <button type="button" class="pill bst active" onclick="locBoSuuTap('all', this)">Tất cả</button>
+                <button type="button" class="pill bst" onclick="locBoSuuTap('banchay', this)">Bán chạy</button>
+                <button type="button" class="pill bst" onclick="locBoSuuTap('quatang', this)">Quà tặng</button>
+            </div>
+
+            <div class="filter-row">
+                <span>Ngân sách:</span>
+                <button type="button" class="pill ns active" onclick="locNganSach('all', this)">Tất cả</button>
+                <button type="button" class="pill ns" onclick="locNganSach('under150', this)">Dưới 150$</button>
+                <button type="button" class="pill ns" onclick="locNganSach('150-250', this)">150$ - 250$</button>
+                <button type="button" class="pill ns" onclick="locNganSach('over250', this)">Trên 250$</button>
+            </div>
+        
+            </section>
+
+            <section>
+                <div class="product-list">
+                    <article class="card" data-price="100" data-collection="banchay">
+                        <div class="image"><img src="./234567890.jpg" alt="Nho đỏ không hạt" width="200" height="96"></div>
+                        <h3>Nho đỏ không hạt</h3>
+                        <p>$100.00<br><button type="button" class="add-btn">Thêm vào giỏ</button></p>
+                    </article>
+
+                    <article class="card" data-price="120" data-collection="banchay">
+                        <div class="image"><img src="45678987654567890.png" alt="Táo Envy" width="200" height="96"></div>
+                        <h3>Táo Envy</h3>
+                        <p>$120.00<br><button type="button" class="add-btn">Thêm vào giỏ</button></p>
+                    </article>
+
+                    <article class="card" data-price="90" data-collection="quatang">
+                        <div class="image"><img src="./2270450000006.jpg.webp" alt="Cherry đỏ" width="200" height="96"></div>
+                        <h3>Cherry đỏ</h3>
+                        <p>$90.00<br><button type="button" class="add-btn">Thêm vào giỏ</button></p>
+                    </article>
+
+                    <article class="card" data-price="80" data-collection="banchay">
+                        <div class="image"><img src="./22222324.jpg" alt="Kiwi vàng" width="200" height="96"></div>
+                        <h3>Kiwi vàng</h3>
+                        <p>$80.00<br><button type="button" class="add-btn">Thêm vào giỏ</button></p>
+                    </article>
+
+                    <article class="card" data-price="10" data-collection="banchay">
+                        <div class="image"><img src="./2187190000008-1.jpg" alt="Cam Navel" width="200" height="96"></div>
+                        <h3>Cam Navel</h3>
+                        <p>$10.00<br><button type="button" class="add-btn">Thêm vào giỏ</button></p>
+                    </article>
+
+                    <article class="card" data-price="50" data-collection="banchay">
+                        <div class="image"><img src="./323232323232.jpg" alt="Lê Hàn Quốc" width="200" height="96"></div>
+                        <h3>Lê Hàn Quốc</h3>
+                        <p>$50.00<br><button type="button" class="add-btn">Thêm vào giỏ</button></p>
+                    </article>
+
+                    <article class="card" data-price="70" data-collection="banchay">
+                        <div class="image"><img src="./13231321.webp" alt="Nho xanh Shine Muscat" width="200" height="96"></div>
+                        <h3>Nho xanh Shine Muscat</h3>
+                        <p>$70.00<br><button type="button" class="add-btn">Thêm vào giỏ</button></p>
+                    </article>
+
+                    <article class="card" data-price="150" data-collection="quatang">
+                        <div class="image"><img src="./341413.jpg" alt="Việt quất" width="200" height="96"></div>
+                        <h3>Việt quất</h3>
+                        <p>$150.00<br><button type="button" class="add-btn">Thêm vào giỏ</button></p>
+                    </article>
+
+                    <article class="card" data-price="100" data-collection="banchay">
+                        <div class="image"><img src="./213131.jpg" alt="Dâu tây" width="200" height="96"></div>
+                        <h3>Dâu tây</h3>
+                        <p>$100.00<br><button type="button" class="add-btn">Thêm vào giỏ</button></p>
+                    </article>
+
+                    <article class="card" data-price="10" data-collection="quatang">
+                        <div class="image"><img src="./12312312312.jpg" alt="Lựu đỏ" width="200" height="96"></div>
+                        <h3>Lựu đỏ</h3>
+                        <p>$10.00<br><button type="button" class="add-btn">Thêm vào giỏ</button></p>
+                    </article>
+                </div>
+
+                <p class="note"><em>Fruity Co &copy;</em></p>
+            </section>
+        </main>
+    </div>
+
+    <aside class="care">
+        <h3>Fruit Ware care</h3>
+        <ul>
+            <li><a href="#">💬 Chat Zalo</a></li>
+            <li><a href="#">📞 Gọi tư vấn</a></li>
+        </ul>
+    </aside>
+
+<script>    
+    var khungSanPham = document.querySelector(".product-list");
+    var tatCaSanPham = Array.from(document.querySelectorAll(".card"));
+    var oSapXep = document.getElementById("sort-select");
+    var soLuong = document.getElementById("product-count");
+    var thongBao = document.getElementById("empty-msg");
+
+   
+    var boSuuTapDangChon = "all";
+    var nganSachDangChon = "all";
+
+  
+    function locBoSuuTap(giaTri, nutVuaBam) {
+        boSuuTapDangChon = giaTri;
+
+        
+        var cacNut = document.querySelectorAll(".bst");
+        for (var i = 0; i < cacNut.length; i++) {
+            cacNut[i].classList.remove("active");
+        }
+      
+        nutVuaBam.classList.add("active");
+
+        hienThi();
+    }
+
+    
+    function locNganSach(giaTri, nutVuaBam) {
+        nganSachDangChon = giaTri;
+
+        var cacNut = document.querySelectorAll(".ns");
+        for (var i = 0; i < cacNut.length; i++) {
+            cacNut[i].classList.remove("active");
+        }
+        nutVuaBam.classList.add("active");
+
+        hienThi();
+    }
+
+    
+    function doiSapXep() {
+        hienThi();
+    }
+
+    function dungNganSach(gia) {
+        if (nganSachDangChon == "under150") {
+            return gia < 150;
+        }
+        if (nganSachDangChon == "150-250") {
+            return gia >= 150 && gia <= 250;
+        }
+        if (nganSachDangChon == "over250") {
+            return gia > 250;
+        }
+        return true; 
+    }
+
+   
+    function hienThi() {
+       
+        var danhSach = tatCaSanPham.slice();
+
+        // sắp xếp theo giá
+        var kieu = oSapXep.value;
+        if (kieu == "asc") {
+            danhSach.sort(function (a, b) {
+                return a.getAttribute("data-price") - b.getAttribute("data-price");
+            });
+        }
+        if (kieu == "desc") {
+            danhSach.sort(function (a, b) {
+                return b.getAttribute("data-price") - a.getAttribute("data-price");
+            });
+        }
+
+        var dem = 0; 
+
+        for (var i = 0; i < danhSach.length; i++) {
+            var the = danhSach[i];
+            var gia = Number(the.getAttribute("data-price"));
+            var bst = the.getAttribute("data-collection");
+
+            
+            var dungBst = false;
+            if (boSuuTapDangChon == "all") {
+                dungBst = true;
+            } else if (bst.indexOf(boSuuTapDangChon) != -1) {
+                dungBst = true;
+            }
+
+            
+            if (dungBst && dungNganSach(gia)) {
+                the.style.display = "";
+                dem = dem + 1;
+            } else {
+                the.style.display = "none";
+            }
+
+            
+            khungSanPham.appendChild(the);
+        }
+
+        
+        soLuong.textContent = dem + " sản phẩm";
+
+      
+        if (dem == 0) {
+            thongBao.style.display = "block";
+        } else {
+            thongBao.style.display = "none";
+        }
+    }
+
+
+</script>
+</body>
+
+</html>

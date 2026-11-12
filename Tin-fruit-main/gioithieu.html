@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tín Fruit - Giới thiệu trái cây</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Itim&display=swap">
+    <link rel="stylesheet" href="Tinfruit.css">
+    <style>
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 14px;
+        }
+
+        .nav-buttons .pill {
+            display: inline-block;
+        }
+
+        .fruit-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .fruit-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            border: 2px solid #f2f0ea;
+            border-radius: 14px;
+            background-color: #1f211f;
+            padding: 12px;
+        }
+
+        .fruit-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px dashed #b9b7b0;
+            flex-shrink: 0;
+            background: #fff;
+        }
+
+        .fruit-item h3 {
+            margin: 0 0 6px 0;
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+        .fruit-item p {
+            margin: 0 0 6px 0;
+            color: #b9b7b0;
+            font-size: 16px;
+        }
+
+        .tag {
+            display: inline-block;
+            border: 1px solid #f2f0ea;
+            border-radius: 999px;
+            padding: 0 10px;
+            font-size: 14px;
+            color: #f2f0ea;
+        }
+
+        @media (max-width: 760px) {
+            .fruit-list { grid-template-columns: 1fr; }
+            .fruit-item { flex-direction: column; }
+            .fruit-item img { width: 100%; height: 200px; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <div class="box main-nav">
+                <a href="index.html"><strong>Tín Fruit</strong></a>
+                <img src="fruitware34_alien.png" alt="Tín Fruit" class="logo-img" width="50" height="50">
+                <div class="actions">
+                    <a class="pill" href="">💬 Chat</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+            <p class="breadcrumb">
+                <a href="TrangChu.html">Trang chủ</a> /
+                <a href="TinFruit.html">Danh mục</a> /
+                <span>Giới thiệu trái cây</span>
+            </p>
+
+            <section class="box banner">
+                <h1>Giới thiệu trái cây</h1>
+                <span>10 loại trái cây nhập khẩu đang có tại Tín Fruit</span>
+                <div class="nav-buttons">
+                    <a class="pill" href="TrangChu.html">← Về trang chủ</a>
+                    <a class="pill" href="TinFruit.html">← Về danh mục</a>
+                </div>
+            </section>
+
+            <section class="fruit-list">
+
+                <article class="fruit-item">
+                    <img src="./234567890.jpg" alt="Nho đỏ không hạt">
+                    <div>
+                        <h3>Nho đỏ không hạt</h3>
+                        <p>Quả tròn mọng, vỏ mỏng, vị ngọt dịu và không có hạt nên rất tiện ăn trực tiếp.</p>
+                        <span class="tag">$100.00</span>
+                    </div>
+                </article>
+
+                <article class="fruit-item">
+                    <img src="45678987654567890.png" alt="Táo Envy">
+                    <div>
+                        <h3>Táo Envy</h3>
+                        <p>Vỏ đỏ đậm, thịt giòn chắc, vị ngọt thanh và ít bị thâm khi cắt.</p>
+                        <span class="tag">$120.00</span>
+                    </div>
+                </article>
+
+                <article class="fruit-item">
+                    <img src="./2270450000006.jpg.webp" alt="Cherry đỏ">
+                    <div>
+                        <h3>Cherry đỏ</h3>
+                        <p>Cherry nhập khẩu từ Mỹ, quả đỏ sẫm, thịt dày, vị ngọt đậm và hơi chua nhẹ.</p>
+                        <span class="tag">$90.00</span>
+                    </div>
+                </article>
+
+                <article class="fruit-item">
+                    <img src="./22222324.jpg" alt="Kiwi vàng">
+                    <div>
+                        <h3>Kiwi vàng</h3>
+                        <p>Ruột vàng óng, vị ngọt mát, ít chua hơn kiwi xanh, giàu vitamin C.</p>
+                        <span class="tag">$80.00</span>
+                    </div>
+                </article>
+
+                <article class="fruit-item">
+                    <img src="./2187190000008-1.jpg" alt="Cam Navel">
+                    <div>
+                        <h3>Cam Navel</h3>
+                        <p>Cam Mỹ múi to, mọng nước, ngọt thanh và gần như không có hạt.</p>
+                        <span class="tag">$10.00</span>
+                    </div>
+                </article>
+
+                <article class="fruit-item">
+                    <img src="./323232323232.jpg" alt="Lê Hàn Quốc">
+                    <div>
+                        <h3>Lê Hàn Quốc</h3>
+                        <p>Quả to, vỏ vàng nâu, thịt trắng giòn, nhiều nước và vị ngọt mát.</p>
+                        <span class="tag">$50.00</span>
+                    </div>
+                </article>
+
+                <article class="fruit-item">
+                    <img src="./13231321.webp" alt="Nho xanh Shine Muscat">
+                    <div>
+                        <h3>Nho xanh Shine Muscat</h3>
+                        <p>Nho xanh Hàn Quốc, vỏ mỏng ăn được, thơm mùi muscat và rất ngọt.</p>
+                        <span class="tag">$70.00</span>
+                    </div>
+                </article>
+
+                <article class="fruit-item">
+                    <img src="./341413.jpg" alt="Việt quất">
+                    <div>
+                        <h3>Việt quất</h3>
+                        <p>Quả nhỏ màu xanh tím, vị ngọt chua nhẹ, hợp ăn trực tiếp, làm sinh tố hoặc bánh.</p>
+                        <span class="tag">$150.00</span>
+                    </div>
+                </article>
+
+                <article class="fruit-item">
+                    <img src="./213131.jpg" alt="Dâu tây">
+                    <div>
+                        <h3>Dâu tây</h3>
+                        <p>Quả đỏ bóng, thơm, vị ngọt chua hài hòa, ăn tươi hoặc làm món tráng miệng.</p>
+                        <span class="tag">$100.00</span>
+                    </div>
+                </article>
+
+                <article class="fruit-item">
+                    <img src="./12312312312.jpg" alt="Lựu đỏ">
+                    <div>
+                        <h3>Lựu đỏ</h3>
+                        <p>Hạt đỏ như ngọc, mọng nước, vị ngọt chua, thường dùng ăn tươi hoặc ép nước.</p>
+                        <span class="tag">$10.00</span>
+                    </div>
+                </article>
+
+            </section>
+
+            <section class="box" style="margin-top: 16px; text-align: center;">
+                <a class="pill" href="TrangChu.html">🏠 Trang chủ</a>
+                <a class="pill" href="TinFruit.html">📂 Danh mục</a>
+            </section>
+
+            <p class="note"><em>Fruity Co &copy;</em></p>
+        </main>
+    </div>
+
+
+</body>
+
+</html>

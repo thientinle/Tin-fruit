@@ -1,0 +1,17 @@
+body{
+    background: linear-gradient(to bottom, #04eb04, #6ef48d,rgb(224, 231, 224));
+    margin: 0;
+    color: #f2f0ea;
+    font-family: "Itim", "Comic Sans MS", sans-serif;
+    font-size: 18px;
+}
+
+alien{
+    width: 50px;
+}
+
+container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 16px;
+}

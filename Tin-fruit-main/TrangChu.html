@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tín Fruit - Trang chủ</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Itim&display=swap">
+    <link rel="stylesheet" href="Tinfruit.css">
+    <style>
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 28px;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .hero-text h1 {
+            margin: 0 0 10px 0;
+            font-size: 40px;
+            font-weight: normal;
+        }
+
+        .hero-text p {
+            margin: 0 0 16px 0;
+        }
+
+        .hero-text .pill {
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .mascot {
+            background: #fff;
+            border: 2px solid #f2f0ea;
+            border-radius: 14px;
+            padding: 8px;
+            max-width: 320px;
+            width: 100%;
+            animation: bay 3s ease-in-out infinite;
+        }
+
+        .mascot img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @keyframes bay {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <div class="box main-nav">
+                <a href="index.html"><strong>FRUIT WARE</strong></a>
+                <img src="fruitware34_alien.png" alt="FRUIT WARE" class="logo-img" width="50" height="50">
+                <div class="actions">
+                    <a class="pill" href="TinFruit.html">Danh mục</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+            <section class="box banner hero">
+                <div class="hero-text">
+                    <h1>Chào mừng đến FRUIT WARE</h1>
+                    <p>Vua trái cây nhập khẩu. Giao tận nơi, gói ghém tử tế.</p>
+                    <a class="pill" href="TinFruit.html">Xem danh mục</a>
+                </div>
+                <div class="mascot">
+                    <img src="fruitware34_alien.png" alt="Alien FruitWare34">
+                </div>
+            </section>
+
+            <section class="box">
+                <h2>Vì sao chọn FRUIT WARE?</h2>
+                <div class="features">
+                    <article class="card">
+                        <h3>🍇 Nhập khẩu</h3>
+                        <p>Trái cây chọn lọc từ nhiều nước</p>
+                    </article>
+                    <article class="card">
+                        <h3>🚚 Giao tận nơi</h3>
+                        <p>Nhanh, gói cẩn thận</p>
+                    </article>
+                    <article class="card">
+                        <h3>🎁 Quà tặng</h3>
+                        <p>Giỏ quà đẹp cho mọi dịp</p>
+                    </article>
+                </div>
+            </section>
+
+            
+            <p class="note"><em>Fruity Co &copy; | FruitWare34</em></p>
+        </main>
+    </div>
+
+</body>
+
+</html>
